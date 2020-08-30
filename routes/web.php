@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect('/upload_csv');
 });
+
+
+Route::view('/upload_csv', 'upload');
+Route::post('/upload_csv', 'Upload@upload_file');
+Route::post('/add_column', 'Upload@add_column');
